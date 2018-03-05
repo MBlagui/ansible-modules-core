@@ -238,6 +238,7 @@ EXAMPLES = '''
 # Basic mysql provisioning example
 - rds:
     command: create
+    region: us-west-2
     instance_name: new-database
     db_engine: MySQL
     size: 10
@@ -251,6 +252,7 @@ EXAMPLES = '''
 # Create a read-only replica and wait for it to become available
 - rds:
     command: replicate
+    region: us-west-2
     instance_name: new-database-replica
     source_instance: new_database
     wait: yes
@@ -259,6 +261,7 @@ EXAMPLES = '''
 # Delete an instance, but create a snapshot before doing so
 - rds:
     command: delete
+    region: us-west-2
     instance_name: new-database
     snapshot: new_database_snapshot
 
@@ -271,6 +274,7 @@ EXAMPLES = '''
 # Rename an instance and wait for the change to take effect
 - rds:
     command: modify
+    region: us-west-2
     instance_name: new-database
     new_instance_name: renamed-database
     wait: yes
